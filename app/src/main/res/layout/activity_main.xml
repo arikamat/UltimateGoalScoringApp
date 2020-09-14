@@ -4,15 +4,416 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/materialTheme"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/materialTheme"
+                android:textColor="@color/textColor"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:textSize="15sp"
+                android:text="Developed by FTC Team 15891 - Titanium Knights B"
+                android:gravity="center"/>
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Autonomous"
+                android:textSize="35sp"
+                android:textColor="#ffffff"
+                android:background="#263238"
+                android:gravity="center"/>
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <Switch
+                    android:id="@+id/switch1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:gravity="left"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="17sp"
+                    android:switchMinWidth="56dp"
+                    android:text="Deliver Wobble Goal?" />
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                />
+            <!--  HIGH GOAL LINEAR LAYOUT -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="High Goal"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="left"
+                    android:textColor="@color/textColor"
+
+                    android:textSize="17sp" />
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    />
+                <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="0dp"
+                    app:backGroundColor="#000000"/>
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                />
+            <!--  MEDIUM GOAL LINEAR LAYOUT -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Medium Goal"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="left"
+                    android:textColor="@color/textColor"
+
+                    android:textSize="17sp" />
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    />
+                <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="0dp"
+                    app:backGroundColor="#000000"/>
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                />
+
+            <!--  LOW GOAL LINEAR LAYOUT -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Low Goal"
+                    android:gravity="left"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/textColor"
+
+                    android:textSize="17sp" />
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    />
+                <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="0dp"
+                    app:backGroundColor="#000000"/>
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                />
+
+            <!--POWER SHOTS-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Power Shot"
+                    android:gravity="left"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/textColor"
+
+                    android:textSize="17sp" />
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    />
+                <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="0dp"
+                    app:backGroundColor="#000000"/>
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                />
+            <!-- TELEOP -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TeleOp"
+                android:textSize="35sp"
+                android:textColor="#ffffff"
+                android:background="#263238"
+                android:gravity="center"/>
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    />
+                <!--  HIGH GOAL LINEAR LAYOUT -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="High Goal"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="left"
+                        android:textColor="@color/textColor"
+
+                        android:textSize="17sp" />
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        />
+                    <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_marginRight="0dp"
+                        app:backGroundColor="#000000"/>
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    />
+                <!--  MEDIUM GOAL LINEAR LAYOUT -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Medium Goal"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="left"
+                        android:textColor="@color/textColor"
+
+                        android:textSize="17sp" />
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        />
+                    <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_marginRight="0dp"
+                        app:backGroundColor="#000000"/>
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    />
+
+                <!--  LOW GOAL LINEAR LAYOUT -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Low Goal"
+                        android:gravity="left"
+                        android:layout_marginLeft="10dp"
+                        android:textColor="@color/textColor"
+
+                        android:textSize="17sp" />
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        />
+                    <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_marginRight="0dp"
+                        app:backGroundColor="#000000"/>
+                </LinearLayout>
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                />
+            <!-- ENDGAME -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="EndGame"
+                android:textSize="35sp"
+                android:textColor="#ffffff"
+                android:background="#263238"
+                android:gravity="center"/>
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                />
+            <!--  POWERSHOTS -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Power Shot"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="left"
+                    android:textColor="@color/textColor"
+
+                    android:textSize="17sp" />
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    />
+                <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="0dp"
+                    app:backGroundColor="#000000"/>
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                />
+            <!--  Rings On Wobble Goal -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Rings on Wobble Goal"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="left"
+                    android:textColor="@color/textColor"
+
+                    android:textSize="17sp" />
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    />
+                <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="0dp"
+                    app:backGroundColor="#000000"/>
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                />
+
+            <!--  Wobble Goal placement -->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Location of Wobble Goal"
+                android:gravity="left"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/textColor"
+
+                android:textSize="17sp"/>
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                />
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <RadioButton android:id="@+id/startLine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Start Line         "
+                    android:onClick="onRadioButtonClicked"/>
+                <RadioButton android:id="@+id/outsideField"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Outside Field         "
+                    android:onClick="onRadioButtonClicked"/>
+                <RadioButton android:id="@+id/nan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Not Scored"
+                    android:onClick="onRadioButtonClicked"/>
+            </RadioGroup>
+        </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
