@@ -39,6 +39,22 @@
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
                 />
+                <TextView
+                    android:id="@+id/score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/materialTheme"
+                    android:textColor="@color/textColor"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:textSize="35sp"
+                    android:text="Score:                    "
+                    android:gravity="center"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -58,7 +74,7 @@
 
 
                 <Switch
-                    android:id="@+id/switch1"
+                    android:id="@+id/deliverWobble"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:checked="false"
@@ -94,6 +110,7 @@
                     android:layout_weight="1"
                     />
                 <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+                    android:id="@+id/autoHighButton"
                     android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:layout_marginRight="0dp"
@@ -125,6 +142,7 @@
                     android:layout_weight="1"
                     />
                 <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+                    android:id="@+id/autoMedButton"
                     android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:layout_marginRight="0dp"
@@ -156,6 +174,7 @@
                     android:layout_weight="1"
                     />
                 <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+                    android:id="@+id/autoLowButton"
                     android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:layout_marginRight="0dp"
@@ -187,6 +206,7 @@
                     android:layout_weight="1"
                     />
                 <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+                    android:id="@+id/autoPowerButton"
                     android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:layout_marginRight="0dp"
@@ -231,6 +251,7 @@
                         android:layout_weight="1"
                         />
                     <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+                        android:id="@+id/teleHighButton"
                         android:layout_width="wrap_content"
                         android:layout_height="30dp"
                         android:layout_marginRight="0dp"
@@ -262,6 +283,7 @@
                         android:layout_weight="1"
                         />
                     <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+                        android:id="@+id/teleMedButton"
                         android:layout_width="wrap_content"
                         android:layout_height="30dp"
                         android:layout_marginRight="0dp"
@@ -293,6 +315,7 @@
                         android:layout_weight="1"
                         />
                     <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+                        android:id="@+id/teleLowButton"
                         android:layout_width="wrap_content"
                         android:layout_height="30dp"
                         android:layout_marginRight="0dp"
@@ -336,6 +359,7 @@
                     android:layout_weight="1"
                     />
                 <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+                    android:id="@+id/endPowerButton"
                     android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:layout_marginRight="0dp"
@@ -366,6 +390,7 @@
                     android:layout_weight="1"
                     />
                 <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+                    android:id="@+id/endRingButton"
                     android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:layout_marginRight="0dp"
