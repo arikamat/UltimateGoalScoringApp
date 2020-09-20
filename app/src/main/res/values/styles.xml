@@ -7,5 +7,9 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-
+    <style name="Switch" parent="Theme.AppCompat.Light">
+        <item name="colorControlActivated">@color/gold</item>
+        <item name="colorSwitchThumbNormal">#263238</item>
+        <item name="android:colorForeground">#ffffff</item>
+    </style>
 </resources>
