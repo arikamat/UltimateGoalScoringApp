@@ -5,7 +5,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/squaretitanium"
+        android:icon="@mipmap/squarev2"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/circletitanium"
         android:supportsRtl="true"

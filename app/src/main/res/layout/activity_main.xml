@@ -23,7 +23,7 @@
             android:orientation="vertical">
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="20dp"
+                android:layout_height="10dp"
                 />
             <TextView
                 android:layout_width="match_parent"
@@ -37,7 +37,7 @@
                 android:gravity="center"/>
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="20dp"
+                android:layout_height="10dp"
                 />
                 <TextView
                     android:id="@+id/score"
@@ -84,9 +84,34 @@
                     android:theme="@style/Switch"
                     android:switchMinWidth="56dp"
                     android:textColor="@color/textColor"
-                    android:text="Deliver Wobble Goal?" />
+                    android:text="Deliver Wobble Goal? (15)" />
             </LinearLayout>
 
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <Switch
+                    android:id="@+id/parking"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:gravity="left"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="17sp"
+                    android:theme="@style/Switch"
+                    android:switchMinWidth="56dp"
+                    android:textColor="@color/textColor"
+                    android:text="Park on Launch Line? (5)"
+                    />
+            </LinearLayout>
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="5dp"
@@ -100,7 +125,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="High Goal"
+                    android:text="High Goal (12)"
                     android:layout_marginLeft="10dp"
                     android:gravity="left"
                     android:textColor="@color/textColor"
@@ -133,7 +158,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="Medium Goal"
+                    android:text="Medium Goal (6)"
                     android:layout_marginLeft="10dp"
                     android:gravity="left"
                     android:textColor="@color/textColor"
@@ -165,7 +190,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="Low Goal"
+                    android:text="Low Goal (3)"
                     android:gravity="left"
                     android:layout_marginLeft="10dp"
                     android:textColor="@color/textColor"
@@ -198,7 +223,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="Power Shot"
+                    android:text="Power Shot (15)"
                     android:gravity="left"
                     android:layout_marginLeft="10dp"
                     android:textColor="@color/textColor"
@@ -244,7 +269,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:text="High Goal"
+                        android:text="High Goal (6)"
                         android:layout_marginLeft="10dp"
                         android:gravity="left"
                         android:textColor="@color/textColor"
@@ -277,7 +302,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:text="Medium Goal"
+                        android:text="Medium Goal (4)"
                         android:layout_marginLeft="10dp"
                         android:gravity="left"
                         android:textColor="@color/textColor"
@@ -310,7 +335,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:text="Low Goal"
+                        android:text="Low Goal (2)"
                         android:gravity="left"
                         android:layout_marginLeft="10dp"
                         android:textColor="@color/textColor"
@@ -355,7 +380,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="Power Shot"
+                    android:text="Power Shot (15)"
                     android:layout_marginLeft="10dp"
                     android:gravity="left"
                     android:textColor="@color/textColor"
@@ -387,7 +412,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="Rings on Wobble Goal"
+                    android:text="Rings on Wobble Goal (5)"
                     android:layout_marginLeft="10dp"
                     android:gravity="left"
                     android:textColor="@color/textColor"
@@ -417,7 +442,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="Location of Wobble Goal"
+                android:text="Location of Wobble Goal (5 | 20 | 0)"
                 android:gravity="left"
                 android:layout_marginLeft="10dp"
                 android:textColor="@color/textColor"

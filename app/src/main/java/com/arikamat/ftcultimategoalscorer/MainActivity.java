@@ -30,9 +30,11 @@ public class MainActivity  extends AppCompatActivity implements ElegantNumberBut
     private int endGameWobbleGoal=0;
     private int endGamePower=0;
     private int endGameRingsOnWobble=0;
+    private int autoParkLaunchLine =0;
     int previousState =0;
     TextView scoreText;
     Switch delivery;
+    Switch autoParking;
     RadioButton start,out,na;
     ElegantNumberButton autoHighButton,autoMedButton,autoLowButton, autoPowerButton, teleHighButton,teleMedButton, teleLowButton, endGamePowerButton, endGameRingsOnWobbleButton;
     @Override
@@ -44,19 +46,22 @@ public class MainActivity  extends AppCompatActivity implements ElegantNumberBut
 
         autoHighButton = findViewById(R.id.autoHighButton);
         autoHighButton.setOnClickListener(this);
-        autoHighButton.setRange(0,4);
+        autoHighButton.setRange(0,7);
         autoMedButton = findViewById(R.id.autoMedButton);
         autoMedButton.setOnClickListener(this);
-        autoMedButton.setRange(0,4);
+        autoMedButton.setRange(0,7);
         autoLowButton = findViewById(R.id.autoLowButton);
         autoLowButton.setOnClickListener(this);
-        autoLowButton.setRange(0,4);
+        autoLowButton.setRange(0,7);
         autoPowerButton = findViewById(R.id.autoPowerButton);
         autoPowerButton.setOnClickListener(this);
         autoPowerButton.setRange(0,3);
         delivery = findViewById(R.id.deliverWobble);
         delivery.setChecked(false);
         delivery.setOnCheckedChangeListener(this);
+        autoParking = findViewById(R.id.parking);
+        autoParking.setChecked(false);
+        autoParking.setOnCheckedChangeListener(this);
 
         teleHighButton = findViewById(R.id.teleHighButton);
         teleHighButton.setOnClickListener(this);
@@ -84,17 +89,17 @@ public class MainActivity  extends AppCompatActivity implements ElegantNumberBut
         switch (v.getId()) {
             case R.id.autoHighButton:
                 autoHigh= Integer.parseInt(autoHighButton.getNumber());
-                autoscore=(autoHigh*12) + (autoMed*6) +(autoLow*3) + (autoPower*15)+autoDelivery;
+                autoscore = (autoHigh * 12) + (autoMed * 6) + (autoLow * 3) + (autoPower * 15) + autoDelivery+autoParkLaunchLine;
                 update();
                 break;
             case R.id.autoMedButton:
                 autoMed= Integer.parseInt(autoMedButton.getNumber());
-                autoscore=(autoHigh*12) + (autoMed*6) +(autoLow*3) + (autoPower*15)+autoDelivery;
+                autoscore = (autoHigh * 12) + (autoMed * 6) + (autoLow * 3) + (autoPower * 15) + autoDelivery+autoParkLaunchLine;
                 update();
                 break;
             case R.id.autoLowButton:
                 autoLow= Integer.parseInt(autoLowButton.getNumber());
-                autoscore=(autoHigh*12) + (autoMed*6) +(autoLow*3) + (autoPower*15)+autoDelivery;
+                autoscore = (autoHigh * 12) + (autoMed * 6) + (autoLow * 3) + (autoPower * 15) + autoDelivery+autoParkLaunchLine;
                 update();
                 break;
             case R.id.autoPowerButton:
@@ -151,18 +156,29 @@ public class MainActivity  extends AppCompatActivity implements ElegantNumberBut
         String scoreStr = "Score: "+ score;
         scoreText.setText(scoreStr);
     }
-
     @Override
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-        if(isChecked) {
-            autoDelivery = 15;
-            autoscore=(autoHigh*12) + (autoMed*6) +(autoLow*3) + (autoPower*15)+autoDelivery;
-            update();
+        if(buttonView.getId() == R.id.deliverWobble) {
+            if (isChecked) {
+                autoDelivery = 15;
+                autoscore = (autoHigh * 12) + (autoMed * 6) + (autoLow * 3) + (autoPower * 15) + autoDelivery+autoParkLaunchLine;
+                update();
+            } else {
+                autoDelivery = 0;
+                autoscore = (autoHigh * 12) + (autoMed * 6) + (autoLow * 3) + (autoPower * 15) + autoDelivery+autoParkLaunchLine;
+                update();
+            }
         }
-        else {
-            autoDelivery =0;
-            autoscore=(autoHigh*12) + (autoMed*6) +(autoLow*3) + (autoPower*15)+autoDelivery;
-            update();
+        else if(buttonView.getId() == R.id.parking) {
+            if (isChecked) {
+                autoParkLaunchLine = 5;
+                autoscore = (autoHigh * 12) + (autoMed * 6) + (autoLow * 3) + (autoPower * 15) + autoDelivery+autoParkLaunchLine;
+                update();
+            } else {
+                autoParkLaunchLine = 0;
+                autoscore = (autoHigh * 12) + (autoMed * 6) + (autoLow * 3) + (autoPower * 15) + autoDelivery+autoParkLaunchLine;
+                update();
+            }
         }
     }
 
@@ -189,8 +205,6 @@ public class MainActivity  extends AppCompatActivity implements ElegantNumberBut
         na.setChecked(true);
         delivery.setChecked(false);
         update();
-
-
     }
 }
 
