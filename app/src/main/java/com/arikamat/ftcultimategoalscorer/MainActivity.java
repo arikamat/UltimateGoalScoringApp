@@ -2,6 +2,7 @@ package com.arikamat.ftcultimategoalscorer;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -20,6 +21,8 @@ public class MainActivity  extends AppCompatActivity implements ElegantNumberBut
     private int endScore=0;
     private boolean autoWobbleGoal= false;
     private int autoHigh=0;
+    TextView scoreText;
+    Button reset;
     private int autoMed=0;
     private int autoLow=0;
     private int autoPower=0;
@@ -32,7 +35,6 @@ public class MainActivity  extends AppCompatActivity implements ElegantNumberBut
     private int endGameRingsOnWobble=0;
     private int autoParkLaunchLine =0;
     int previousState =0;
-    TextView scoreText;
     Switch delivery;
     Switch autoParking;
     RadioButton start,out,na;
@@ -43,6 +45,13 @@ public class MainActivity  extends AppCompatActivity implements ElegantNumberBut
         setContentView(R.layout.activity_main);
 
         scoreText = findViewById(R.id.score);
+        reset = findViewById(R.id.resetButton);
+        reset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                reset();
+            }
+        });
 
         autoHighButton = findViewById(R.id.autoHighButton);
         autoHighButton.setOnClickListener(this);
@@ -183,6 +192,25 @@ public class MainActivity  extends AppCompatActivity implements ElegantNumberBut
     }
 
     public void reset(){
+        previousState=0;
+        autoscore=0;
+        teleScore=0;
+        teleHigh=0;
+        teleMed=0;
+        teleLow=0;
+        autoHigh=0;
+        endScore=0;
+        autoMed=0;
+        autoLow=0;
+        autoPower=0;
+        autoDelivery =0;
+        teleHigh=0;
+        teleMed=0;
+        teleLow=0;
+        endGameWobbleGoal=0;
+        endGamePower=0;
+        autoParkLaunchLine =0;
+        endGameRingsOnWobble=0;
         autoHighButton.setNumber("0");
         autoMedButton.setNumber("0");
         autoLowButton.setNumber("0");
@@ -192,18 +220,11 @@ public class MainActivity  extends AppCompatActivity implements ElegantNumberBut
         teleLowButton.setNumber("0");
         endGamePowerButton.setNumber("0");
         endGameRingsOnWobbleButton.setNumber("0");
-        autoscore =0;
-        teleScore=0;
-        endScore=0;
-        autoDelivery=0;
-        start.setChecked(false);
-        out.setChecked(false);
-        na.setChecked(true);
+        autoParking.setChecked(false);
         delivery.setChecked(false);
         start.setChecked(false);
         out.setChecked(false);
         na.setChecked(true);
-        delivery.setChecked(false);
         update();
     }
 }
