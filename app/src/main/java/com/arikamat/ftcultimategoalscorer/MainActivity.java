@@ -19,7 +19,7 @@ public class MainActivity  extends AppCompatActivity implements ElegantNumberBut
     private int autoscore =0;
     private int teleScore =0;
     private int endScore=0;
-    private boolean autoWobbleGoal= false;
+    private int autoDeliverWobble =0;
     private int autoHigh=0;
     TextView scoreText;
     Button reset;
@@ -35,10 +35,9 @@ public class MainActivity  extends AppCompatActivity implements ElegantNumberBut
     private int endGameRingsOnWobble=0;
     private int autoParkLaunchLine =0;
     int previousState =0;
-    Switch delivery;
     Switch autoParking;
     RadioButton start,out,na;
-    ElegantNumberButton autoHighButton,autoMedButton,autoLowButton, autoPowerButton, teleHighButton,teleMedButton, teleLowButton, endGamePowerButton, endGameRingsOnWobbleButton;
+    ElegantNumberButton autoHighButton,autoMedButton,autoLowButton, autoPowerButton, autoWobbleGoal, teleHighButton,teleMedButton, teleLowButton, endGamePowerButton, endGameRingsOnWobbleButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,9 +64,9 @@ public class MainActivity  extends AppCompatActivity implements ElegantNumberBut
         autoPowerButton = findViewById(R.id.autoPowerButton);
         autoPowerButton.setOnClickListener(this);
         autoPowerButton.setRange(0,3);
-        delivery = findViewById(R.id.deliverWobble);
-        delivery.setChecked(false);
-        delivery.setOnCheckedChangeListener(this);
+        autoWobbleGoal = findViewById(R.id.autoDeliverWG);
+        autoWobbleGoal.setOnClickListener(this);
+        autoWobbleGoal.setRange(0,2);
         autoParking = findViewById(R.id.parking);
         autoParking.setChecked(false);
         autoParking.setOnCheckedChangeListener(this);
@@ -98,22 +97,27 @@ public class MainActivity  extends AppCompatActivity implements ElegantNumberBut
         switch (v.getId()) {
             case R.id.autoHighButton:
                 autoHigh= Integer.parseInt(autoHighButton.getNumber());
-                autoscore = (autoHigh * 12) + (autoMed * 6) + (autoLow * 3) + (autoPower * 15) + autoDelivery+autoParkLaunchLine;
+                autoscore=(autoHigh*12) + (autoMed*6) +(autoLow*3) + (autoPower*15)+(autoDeliverWobble*15)+autoParkLaunchLine;
                 update();
                 break;
             case R.id.autoMedButton:
                 autoMed= Integer.parseInt(autoMedButton.getNumber());
-                autoscore = (autoHigh * 12) + (autoMed * 6) + (autoLow * 3) + (autoPower * 15) + autoDelivery+autoParkLaunchLine;
+                autoscore=(autoHigh*12) + (autoMed*6) +(autoLow*3) + (autoPower*15)+(autoDeliverWobble*15)+autoParkLaunchLine;
                 update();
                 break;
             case R.id.autoLowButton:
                 autoLow= Integer.parseInt(autoLowButton.getNumber());
-                autoscore = (autoHigh * 12) + (autoMed * 6) + (autoLow * 3) + (autoPower * 15) + autoDelivery+autoParkLaunchLine;
+                autoscore=(autoHigh*12) + (autoMed*6) +(autoLow*3) + (autoPower*15)+(autoDeliverWobble*15)+autoParkLaunchLine;
                 update();
                 break;
             case R.id.autoPowerButton:
                 autoPower= Integer.parseInt(autoPowerButton.getNumber());
-                autoscore=(autoHigh*12) + (autoMed*6) +(autoLow*3) + (autoPower*15)+autoDelivery;
+                autoscore=(autoHigh*12) + (autoMed*6) +(autoLow*3) + (autoPower*15)+(autoDeliverWobble*15)+autoParkLaunchLine;
+                update();
+                break;
+            case R.id.autoDeliverWG:
+                autoDeliverWobble= Integer.parseInt(autoWobbleGoal.getNumber());
+                autoscore=(autoHigh*12) + (autoMed*6) +(autoLow*3) + (autoPower*15)+(autoDeliverWobble*15)+autoParkLaunchLine;
                 update();
                 break;
             case R.id.teleHighButton:
@@ -167,25 +171,14 @@ public class MainActivity  extends AppCompatActivity implements ElegantNumberBut
     }
     @Override
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-        if(buttonView.getId() == R.id.deliverWobble) {
-            if (isChecked) {
-                autoDelivery = 15;
-                autoscore = (autoHigh * 12) + (autoMed * 6) + (autoLow * 3) + (autoPower * 15) + autoDelivery+autoParkLaunchLine;
-                update();
-            } else {
-                autoDelivery = 0;
-                autoscore = (autoHigh * 12) + (autoMed * 6) + (autoLow * 3) + (autoPower * 15) + autoDelivery+autoParkLaunchLine;
-                update();
-            }
-        }
-        else if(buttonView.getId() == R.id.parking) {
+        if(buttonView.getId() == R.id.parking) {
             if (isChecked) {
                 autoParkLaunchLine = 5;
-                autoscore = (autoHigh * 12) + (autoMed * 6) + (autoLow * 3) + (autoPower * 15) + autoDelivery+autoParkLaunchLine;
+                autoscore=(autoHigh*12) + (autoMed*6) +(autoLow*3) + (autoPower*15)+(autoDeliverWobble*15)+autoParkLaunchLine;
                 update();
             } else {
                 autoParkLaunchLine = 0;
-                autoscore = (autoHigh * 12) + (autoMed * 6) + (autoLow * 3) + (autoPower * 15) + autoDelivery+autoParkLaunchLine;
+                autoscore=(autoHigh*12) + (autoMed*6) +(autoLow*3) + (autoPower*15)+(autoDeliverWobble*15)+autoParkLaunchLine;
                 update();
             }
         }
@@ -203,6 +196,7 @@ public class MainActivity  extends AppCompatActivity implements ElegantNumberBut
         autoMed=0;
         autoLow=0;
         autoPower=0;
+        autoDeliverWobble=0;
         autoDelivery =0;
         teleHigh=0;
         teleMed=0;
@@ -221,7 +215,7 @@ public class MainActivity  extends AppCompatActivity implements ElegantNumberBut
         endGamePowerButton.setNumber("0");
         endGameRingsOnWobbleButton.setNumber("0");
         autoParking.setChecked(false);
-        delivery.setChecked(false);
+        autoWobbleGoal.setNumber("0");
         start.setChecked(false);
         out.setChecked(false);
         na.setChecked(true);

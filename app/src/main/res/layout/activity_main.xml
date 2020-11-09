@@ -85,30 +85,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="5dp"
                 />
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
 
-
-                <Switch
-                    android:id="@+id/deliverWobble"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:checked="false"
-                    android:gravity="left"
-                    android:layout_marginLeft="10dp"
-                    android:textSize="17sp"
-                    android:theme="@style/Switch"
-                    android:switchMinWidth="56dp"
-                    android:textColor="@color/textColor"
-                    android:text="Deliver Wobble Goal? (15)" />
-            </LinearLayout>
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="5dp"
-                />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -129,6 +106,36 @@
                     android:textColor="@color/textColor"
                     android:text="Park on Launch Line? (5)"
                     />
+            </LinearLayout>
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Deliver Wobble Goal (15)"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="left"
+                    android:textColor="@color/textColor"
+
+                    android:textSize="17sp" />
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    />
+                <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+                    android:id="@+id/autoDeliverWG"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="0dp"
+                    app:textColor="@color/white"
+                    app:backGroundColor="@color/gray"/>
             </LinearLayout>
             <Space
                 android:layout_width="match_parent"
